@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@EnableFeignClients(basePackages = "test.api")
+@EnableFeignClients(basePackages = "test.client.feign")
 @ComponentScan("test.api")
 public class ClientDemoApp {
     public static void main(String[] args) {

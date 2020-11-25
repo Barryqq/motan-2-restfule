@@ -4,17 +4,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import test.api.DemoApi;
-import test.api.Order;
-import test.api.RpcRequestVo;
-import test.api.User;
+import test.api.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 @RequestMapping("_api")
-public class DemoApiRestfulImpl implements DemoApi {
+public class DemoApiRestfulImpl implements DemoRestApi {
 
     @Override
     @RequestMapping
@@ -37,10 +34,10 @@ public class DemoApiRestfulImpl implements DemoApi {
      * @param user
      * @param order
      */
-    @Override
+    /*@Override
     public void update(@RequestBody User user, @RequestBody Order order) {
         // 只是用于演示多参数转换
-    }
+    }*/
 
     /**
      * 替换例子，把motan 的多参数封装成一个参数传输
@@ -49,7 +46,8 @@ public class DemoApiRestfulImpl implements DemoApi {
      * @return
      */
     @RequestMapping("update")
-    List<User> update(@RequestBody RpcRequestVo<User> rpcRequestVo) {
+    @Override
+    public List<User> update(@RequestBody RpcRequestVo<User> rpcRequestVo) {
         List<User> list = new ArrayList<>();
         return list;
     }

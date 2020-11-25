@@ -1,13 +1,17 @@
-package test.api;
+package test.client.feign;
 
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import test.api.RpcRequestVo;
+import test.api.User;
 
 import java.util.List;
 
-@RequestMapping("_api")
+@Component
+@FeignClient(name = "demoRestApi")
 public interface DemoRestApi {
 
     @RequestMapping("/")

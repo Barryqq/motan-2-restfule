@@ -4,7 +4,11 @@ import com.weibo.api.motan.config.springsupport.annotation.MotanReferer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import test.api.*;
+import test.api.DemoApi;
+import test.api.RpcRequestOrderVo;
+import test.api.RpcRequestVo;
+import test.api.User;
+import test.client.feign.DemoRestApi;
 
 import java.math.BigDecimal;
 
